@@ -1,0 +1,158 @@
+set nocompatible
+
+" my preferred leader key. Set this first so if things are binding to leader
+" they bind to my leader instead of the default.
+let mapleader = ","
+
+" setup pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
+" set up colors
+set background=dark
+colorscheme solarized
+
+" search options
+set ignorecase " make / searches case insensitive
+set smartcase " (unless they contain a capital)
+set incsearch " search while typing
+set hlsearch " highlight search results
+" <leader><space> to clear search
+nnoremap <leader><space> :let @/=''<cr>
+
+" tab settings
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+
+" indent settings
+set autoindent
+set copyindent
+set smartindent
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+set ruler
+set showmode
+set showcmd
+set visualbell
+set hidden       " enables better buffer support
+set showmatch    " show matching parens
+set wrap!
+
+" set cursorline
+" set title
+
+" make command completion more like readline
+set wildmenu
+set wildmode=list:longest
+
+" Invisible Characters
+" set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+autocmd filetype html,xml set listchars-=tab:>.
+noremap <Leader>i :set list!<CR> " Toggle invisible chars
+
+" map ; to : for the quickness
+nnoremap ; :
+
+" exchange ` and '
+nnoremap ' `
+nnoremap ` '
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Use `s' to insert a Single character
+nnoremap s :exec "normal i".nr2char(getchar())."\e"<CR>
+
+if has("mouse")
+  set mouse=a
+endif
+
+" show line numbers
+set nu
+
+" show invisible characters
+set list
+
+set scrolloff=3
+set sidescrolloff=3
+
+"syntax highlighting for erb files
+autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+
+" spellcheck on in commit messages
+au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+
+" convert hashrockets to ruby 1.9 syntax
+nmap <leader>rh :%s/\v(:)@<!:([a-zA-Z_][a-zA-Z_0-9]*)(\s*)\=\>\s?/\2:\3/gc<cr>
+
+" easy acking
+function! AckGrep(command)
+  cexpr system("ack --column " . a:command)
+  cw
+endfunction
+
+command! -nargs=+ -complete=file Ack call AckGrep(<q-args>)
+nnoremap <leader>a :Ack<space>
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" ignore existing swapfile warning
+set shortmess+=A
+
+" No splash screen
+set shortmess+=I
+
+" Make backspace behave the way I expect
+set backspace=indent,eol,start
+
+" highlight the wrap column
+if exists('+colorcolumn')
+  set colorcolumn=+0
+  highlight ColorColumn ctermbg=black
+endif
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Syntastic Settings
+let g:syntastic_ruby_checkers = ['rubocop']
+
+" Always add any detected errors into the location list
+let g:syntastic_always_populate_loc_list = 1
+
+" Don't auto-open it when errors/warnings are detected, but auto-close when no
+" more errors/warnings are detected.
+let g:syntastic_auto_loc_list = 2
+
+" Highlight syntax errors where possible
+let g:syntastic_enable_highlighting = 1
+
+" Show this many errors/warnings at a time in the location list
+let g:syntastic_loc_list_height = 5
+
+" Only run checkers on save, not save & quit
+let g:syntastic_check_on_wq = 0
+
+" Pretty it up a little
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_style_error_symbol = '⚠'
+let g:syntastic_style_warning_symbol = '⚠'
+
+" highlight the wrap column
+if exists('+colorcolumn')
+  set colorcolumn=+0
+  highlight ColorColumn ctermbg=black
+endif

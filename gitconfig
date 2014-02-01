@@ -1,0 +1,70 @@
+[alias]
+  r = reset --hard origin/master
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg  = log --graph --pretty=format:'%C(cyan)%h%Creset - %s %Cgreen(%cr) %C(blue)<%an>%C(yellow)%d%Creset' --abbrev-commit
+  lag = log --graph --pretty=format:'%C(cyan)%h %Cgreen(%cD)%Creset - %s %Cblue<%an> %C(yellow)%d%Creset' --abbrev-commit
+  dtag = !git tag release-`date \"+%Y%m%d%H%M\"`
+  p = pull --rebase
+  sha1 = rev-parse HEAD
+  su = submodule update --init
+  staged = diff --cached
+  patch = add --patch
+  amend = commit --amend
+  pear = pair
+
+[branch]
+  autosetuprebase = local
+
+[apply]
+  whitepace = fix
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[core]
+  excludesfile = "~/.gitignore"
+
+[log]
+  decorate = short
+
+[merge]
+  log = 100
+  ff = only
+
+[push]
+  default = upstream
+
+[rebase]
+  autosquash = true
+
+[rerere]
+  enabled = true
+
+[user]
+  name = Noah Silas
+  email = noah@silas.cc
+  gerrit = noah
+
+# Only works in 1.7.10+
+[include]
+  path = ~/.gitconfig.local

@@ -1,0 +1,8 @@
+--pager=less -FRSX
+--type-set=haml=.haml
+--type-set=sass=.sass
+--type-set=scss=.scss
+--type-add=ruby=.rake
+--ignore-dir=vendor
+--ignore-dir=tmp
+--ignore-dir=coverage
