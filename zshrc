@@ -46,6 +46,9 @@ setopt hist_expire_dups_first
 setopt hist_ignore_space
 setopt inc_append_history
 
+# when deleting words (^w), stop on backslashes
+export WORDCHARS=${WORDCHARS//[\/]}
+
 # make terminal.app play nice with unicode
 export LANG=en_US.UTF-8
 
