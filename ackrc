@@ -2,6 +2,7 @@
 --type-set=haml=.haml
 --type-set=sass=.sass
 --type-set=scss=.scss
+--type-add=js=.jsx
 --type-add=ruby=.rake
 --ignore-dir=vendor
 --ignore-dir=tmp
