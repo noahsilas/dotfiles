@@ -135,7 +135,6 @@ ssh-reagent () {
 # set up colors
 autoload colors; colors;
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
-eval `dircolors ~/.dircolors.ansi-dark`
 
 # set up prompt
 setopt prompt_subst
