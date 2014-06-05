@@ -93,6 +93,12 @@ alias b='bundle'
 alias be='bundle exec'
 alias mig="bundle exec rake db:migrate db:test:prepare"
 
+# setup rbenv if installed
+if [[ -d $HOME/.rbenv/bin ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
 # search for ruby definitions
 def (){
   PATTERN=$1
