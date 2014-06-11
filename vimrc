@@ -156,3 +156,6 @@ if exists('+colorcolumn')
   set colorcolumn=+0
   highlight ColorColumn ctermbg=black
 endif
+
+" add an easy way to leave insert mode
+imap jj <Esc>
