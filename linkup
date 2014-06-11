@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+RELATIVE_PATH=`dirname $0`
+DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
+
+for FILE in $DOTFILES_PATH/*; do
+    ln -s $FILE ~/.`basename $FILE`
+done
+
