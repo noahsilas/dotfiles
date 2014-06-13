@@ -3,3 +3,8 @@
 Session.vim
 *.pyc
 *.pyo
+
+# OSX junk
+.DS_Store
+.Spotlight-V100
+.Trashes
