@@ -25,3 +25,6 @@
 [submodule "dotfiles/vim/bundle/vim-surround"]
 	path = dotfiles/vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vim-airline"]
+	path = dotfiles/vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
