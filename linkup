@@ -1,4 +1,7 @@
 #!/bin/zsh
+#
+# Links the contents of the `dotfiles` directory into the home directory,
+# prefixing each with a `.`.
 
 RELATIVE_PATH=`dirname $0`
 DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
@@ -6,4 +9,3 @@ DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
 for FILE in $DOTFILES_PATH/*; do
     ln -s $FILE ~/.`basename $FILE`
 done
-
