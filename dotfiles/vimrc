@@ -29,7 +29,6 @@ set smarttab
 
 " indent settings
 set autoindent
-set copyindent
 set smartindent
 
 syntax on
