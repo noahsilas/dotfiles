@@ -79,7 +79,7 @@ set sidescrolloff=3
 "syntax highlighting for erb files
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 
-" spellcheck on in commit messages
+" enable spellcheck in commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 " convert hashrockets to ruby 1.9 syntax
