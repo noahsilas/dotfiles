@@ -44,9 +44,6 @@ set hidden       " enables better buffer support
 set showmatch    " show matching parens
 set wrap!
 
-" set cursorline
-" set title
-
 " make command completion more like readline
 set wildmenu
 set wildmode=list:longest
