@@ -49,7 +49,7 @@ set wildmenu
 set wildmode=list:longest
 
 " Invisible Characters
-" set list
+set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 autocmd filetype html,xml set listchars-=tab:>.
 noremap <Leader>i :set list!<CR> " Toggle invisible chars
@@ -73,9 +73,6 @@ endif
 
 " show line numbers
 set nu
-
-" show invisible characters
-set list
 
 set scrolloff=3
 set sidescrolloff=3
