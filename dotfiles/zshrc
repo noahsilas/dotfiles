@@ -66,6 +66,9 @@ export WORKON_HOME=$HOME/.virtualenvs
 [[ -s /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 
+### heroku setup
+[[ -d /usr/local/heroku/bin ]] && export PATH="/usr/local/heroku/bin:$PATH"
+
 ## pip settings
 # only install into virtual envs
 export PIP_REQUIRE_VIRTUALENV=true
