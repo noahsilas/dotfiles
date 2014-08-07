@@ -15,6 +15,7 @@
   patch = add --patch
   amend = commit --amend
   pear = pair
+  reset-author = commit --amend --reset-author -C HEAD
 
 [branch]
   autosetuprebase = local
