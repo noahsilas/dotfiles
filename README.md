@@ -7,6 +7,11 @@ git clone git@github.com:noahsilas/dotfiles.git
 cd ./dotfiles
 git submodule update --init
 ./linkup
+
+# compile Command-T
+cd ~/.vim/bundle/Command-T/ruby/command-t
+ruby extconf.rb
+make
 ```
 
 ## Adding a vim submodule
