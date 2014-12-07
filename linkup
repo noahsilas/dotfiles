@@ -7,5 +7,13 @@ RELATIVE_PATH=`dirname $0`
 DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
 
 for FILE in $DOTFILES_PATH/*; do
-    ln -s $FILE ~/.`basename $FILE`
+    DEST=~/.`basename $FILE`
+
+    if [[ -L $DEST ]] && [[ `readlink $DEST` == $FILE ]]; then
+        # The link is already to the destination; we don't need to do
+        # anything.
+        continue
+    fi
+
+    ln -s $FILE $DEST
 done
