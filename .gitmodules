@@ -28,3 +28,6 @@
 [submodule "vim-airline"]
 	path = dotfiles/vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "vim-tmux-navigator"]
+	path = dotfiles/vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
