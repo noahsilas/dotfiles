@@ -147,9 +147,11 @@ PROMPT='%{$fg[blue]%}%m:%{$fg[magenta]%}${PWD/#$HOME/~}
 
 RPROMPT='%{$fg[blue]%}[ %* ]%{$reset_color%}'
 
+export MYSQL_PS1="\u@\h [\d]> "
+
 # add platform specific overrides
 PLATFORM_RC=~/.zshrc.`uname`
 [[ -s $PLATFORM_RC ]] && source $PLATFORM_RC
 
-# add locals
+# add overrides specific to this box / user
 [[ -s ~/.zshrc.local ]] && source ~/.zshrc.local
