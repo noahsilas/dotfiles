@@ -148,7 +148,7 @@ PROMPT='%{$fg[blue]%}%m:%{$fg[magenta]%}${PWD/#$HOME/~}
 RPROMPT='%{$fg[blue]%}[ %* ]%{$reset_color%}'
 
 # add platform specific overrides
-PLATFORM_RC="~/.zshrc.`uname`"
+PLATFORM_RC=~/.zshrc.`uname`
 [[ -s $PLATFORM_RC ]] && source $PLATFORM_RC
 
 # add locals

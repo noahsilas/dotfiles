@@ -1,2 +1,0 @@
-# set up colors
-eval `dircolors ~/.dircolors.ansi-dark`

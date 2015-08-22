@@ -7,3 +7,6 @@ then
     open -f -a /Applications/Preview.app
   }
 fi
+
+# Enable colors in BSD style `ls`
+export CLICOLOR=1
