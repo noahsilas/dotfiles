@@ -13,27 +13,19 @@ export PATH
 # Load RVM if present
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# git completion
-[[ -s $HOME/.git-completion.bash ]] && source $HOME/.git-completion.bash
-
-# git prompt vars
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-
 # Trying to use these variables in the prompt expansion seems to result
 # in weirdness, so these are mostly here to help me keep track of which
 # code is what color.
 GREEN="\[\e[0;32m\]"
 CYAN="\[\e[0;36m\]"
 RESET="\[\e[0;0m\]"
-export PS1='\[\e[0;32m\]\h\[\e[0;0m\]:\w$(__git_ps1 "\[\e[0;36m\][%s]\[\e[0;0m\]")$ '
+export PS1='\[\e[0;36m\]\h\[\e[0;0m\]:\w$ '
 
 export EDITOR=vim
 set noclobber
 
 # set up colors
 export CLICOLOR=1
-alias ls="ls --color=auto"
 alias tmux="tmux -2" # make tmux default to 256 color support
 
 ### Virtualenvwrapper setup
@@ -107,8 +99,6 @@ ssh-reagent () {
  echo "Cannot find ssh agent - maybe you should reconnect and forward it?"
 }
 
-alias skipt="SKIP_CHECKS=test_history"
-
 servehere () {
   # start a simple http server in the working directory
   # Usage:
@@ -125,8 +115,5 @@ fi
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export HISTCONTROL=ignoredups:erasedups
-
-# set up solarized-dark dircolors
-eval `dircolors ~/.dircolors.ansi-dark`
 
 [[ -s ~/.bash_profile.local ]] && source ~/.bash_profile.local
