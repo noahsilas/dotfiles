@@ -10,7 +10,7 @@ call pathogen#infect()
 
 " set up colors
 set background=dark
-colorscheme solarized
+colorscheme base16-solarized
 
 " search options
 set ignorecase " make / searches case insensitive
