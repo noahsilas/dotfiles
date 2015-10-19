@@ -107,9 +107,9 @@ set shortmess+=I
 " Make backspace behave the way I expect
 set backspace=indent,eol,start
 
-" highlight the wrap column
+" highlight the wrap column and column 100 (Brigade hard line length limit)
 if exists('+colorcolumn')
-  set colorcolumn=+0
+  set colorcolumn=+0,100
   highlight ColorColumn ctermbg=black
 endif
 
@@ -143,12 +143,6 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '⚠'
 let g:syntastic_style_warning_symbol = '⚠'
-
-" highlight the wrap column
-if exists('+colorcolumn')
-  set colorcolumn=+0
-  highlight ColorColumn ctermbg=black
-endif
 
 " add an easy way to leave insert mode
 imap jj <Esc>
