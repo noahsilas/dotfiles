@@ -26,9 +26,6 @@
 [branch]
   autosetuprebase = local
 
-[apply]
-  whitepace = fix
-
 [color]
   ui = auto
 
