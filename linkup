@@ -4,15 +4,21 @@
 # prefixing each with a `.`.
 
 RELATIVE_PATH=`dirname $0`
+BACKUP_PATH=$RELATIVE_PATH/backup/`date +%Y%m%d%k%M%S`
 DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
 
 for FILE in $DOTFILES_PATH/*; do
-    DEST=~/.`basename $FILE`
+    NAME=`basename $FILE`
+    DEST=~/.$NAME
 
     if [[ -L $DEST ]] && [[ `readlink $DEST` == $FILE ]]; then
         # The link is already to the destination; we don't need to do
         # anything.
         continue
+    elif [[ -e $DEST ]] then
+      mkdir -p $BACKUP_PATH
+      echo "Backing up $DEST"
+      mv $DEST $BACKUP_PATH/$NAME
     fi
 
     ln -s $FILE $DEST
