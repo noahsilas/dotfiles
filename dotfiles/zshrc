@@ -94,6 +94,7 @@ alias hai='cd'
 # git shortcuts
 alias g='git'
 alias gpsh='git push origin HEAD:$(git_current_branch)'
+alias ri='git ri'
 
 # budler shortcuts
 alias b='bundle'
