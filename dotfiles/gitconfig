@@ -60,8 +60,7 @@
 
 [user]
   name = Noah Silas
-  email = noah@silas.cc
-  gerrit = noah
+  email = noahking@gmail.com
 
 # Only works in 1.7.10+
 [include]
