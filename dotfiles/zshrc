@@ -47,7 +47,7 @@ setopt hist_ignore_space
 setopt inc_append_history
 
 # Instead of commenting a line and restoring it with the up arrow, push
-# it onto the input stack with ^q; it comes back after you hit enter
+# it onto the input stack with ^x; it comes back after you hit enter
 bindkey "^x" push-input
 
 # when deleting words (^w), stop on backslashes
