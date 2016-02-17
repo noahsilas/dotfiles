@@ -80,8 +80,6 @@ export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
 # make pip play nice with virtualenvwrapper
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
-# make pip cache downloaded files
-export PIP_DOWNLOAD_CACHE="~/.pip/download-cache"
 
 ### lolcodes
 alias rtfm='man'
