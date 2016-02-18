@@ -53,9 +53,6 @@ bindkey "^x" push-input
 # when deleting words (^w), stop on backslashes
 export WORDCHARS=${WORDCHARS//[\/]}
 
-# make terminal.app play nice with unicode
-export LANG=en_US.UTF-8
-
 # only build x86_64 binaries
 export ARCHFLAGS="-arch x86_64"
 
