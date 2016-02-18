@@ -10,3 +10,6 @@ fi
 
 # Enable colors in BSD style `ls`
 export CLICOLOR=1
+
+# only build x86_64 binaries
+export ARCHFLAGS="-arch x86_64"

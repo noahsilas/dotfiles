@@ -53,9 +53,6 @@ bindkey "^x" push-input
 # when deleting words (^w), stop on backslashes
 export WORDCHARS=${WORDCHARS//[\/]}
 
-# only build x86_64 binaries
-export ARCHFLAGS="-arch x86_64"
-
 # rmpyc - recursively deletes pyc files below this directory
 alias rmpyc="find . -name '*.pyc' -delete"
 
