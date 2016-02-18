@@ -35,7 +35,7 @@ autoload -U compinit
 zmodload -i zsh/complist
 
 # History
-if [ -z $HISTFILE ]; then
+if [ -z "$HISTFILE" ]; then
     HISTFILE=$HOME/.zsh_history
 fi
 HISTSIZE=10000
@@ -109,27 +109,27 @@ fi
 def (){
   PATTERN=$1
   shift
-  ack "(class|module|def) (self\.)?$PATTERN" $*
+  ack "(class|module|def) (self\.)?$PATTERN" "$@"
 }
 
 # jump to bundled gem
 cdg () {
-  bundle show $1 && cd `bundle show $1`
+  bundle show "$1" && cd "$(bundle show "$1")" || exit
 }
 
 # jump to python package
 function cdp () {
   cd "$(python -c "import os.path as _, ${1}; \
       print _.dirname(_.realpath(${1}.__file__[:-1]))"
-      )"
+      )" || exit
 }
 
 # reconnect to ssh-agent
 ssh-reagent () {
  for agent in /tmp/ssh-*/agent.*; do
-   echo Trying $agent
+   echo Trying "$agent"
    export SSH_AUTH_SOCK=$agent
-   if ssh-add -l 2>&1 > /dev/null; then
+   if ssh-add -l > /dev/null 2>&1; then
      echo Found working SSH Agent:
      ssh-add -l
      return
@@ -153,7 +153,7 @@ RPROMPT='%{$fg[blue]%}[ %* ]%{$reset_color%}'
 export MYSQL_PS1="\u@\h [\d]> "
 
 # add platform specific overrides
-PLATFORM_RC=~/.zshrc.`uname`
+PLATFORM_RC=~/.zshrc.$(uname)
 [[ -s $PLATFORM_RC ]] && source $PLATFORM_RC
 
 # add overrides specific to this box / user
