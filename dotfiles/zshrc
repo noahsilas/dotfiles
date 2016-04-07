@@ -28,6 +28,10 @@ bindkey "\e[3~" delete-char
 # Completion
 autoload -U compinit
 zmodload -i zsh/complist
+compinit
+
+# allow lower case input to tab-complete to upper case
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+l:|=* r:|=*'
 
 # Instead of commenting a line and restoring it with the up arrow, push
 # it onto the input stack with ^x; it comes back after you hit enter
