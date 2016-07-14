@@ -31,3 +31,6 @@
 [submodule "base16-vim"]
 	path = dotfiles/vim/bundle/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
+[submodule "vim-abolish"]
+	path = dotfiles/vim/bundle/vim-abolish
+	url = git@github.com:tpope/vim-abolish.git
