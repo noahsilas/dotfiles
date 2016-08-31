@@ -34,3 +34,6 @@
 [submodule "vim-abolish"]
 	path = dotfiles/vim/bundle/vim-abolish
 	url = git@github.com:tpope/vim-abolish.git
+[submodule "vim-sensible"]
+	path = dotfiles/vim/bundle/vim-sensible
+	url = git@github.com:tpope/vim-sensible.git

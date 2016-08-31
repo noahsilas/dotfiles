@@ -15,7 +15,6 @@ colorscheme base16-solarized
 " search options
 set ignorecase " make / searches case insensitive
 set smartcase " (unless they contain a capital)
-set incsearch " search while typing
 set hlsearch " highlight search results
 " <leader><space> to clear search
 nnoremap <leader><space> :let @/=''<cr>
@@ -25,27 +24,20 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set smarttab
 
 " indent settings
-set autoindent
 set smartindent
 
 syntax on
-filetype on
-filetype plugin on
-filetype indent on
 
-set ruler
 set showmode
 set showcmd
 set visualbell
 set hidden       " enables better buffer support
 set showmatch    " show matching parens
-set wrap!
+set nowrap
 
 " make command completion more like readline
-set wildmenu
 set wildmode=list:longest
 
 " Invisible Characters
@@ -73,8 +65,8 @@ endif
 " show line numbers
 set nu
 
+" show a little more context than the sensible.vim default
 set scrolloff=3
-set sidescrolloff=3
 
 "syntax highlighting for erb files
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
@@ -103,9 +95,6 @@ set shortmess+=A
 
 " No splash screen
 set shortmess+=I
-
-" Make backspace behave the way I expect
-set backspace=indent,eol,start
 
 " highlight the wrap column and column 100 (Brigade hard line length limit)
 if exists('+colorcolumn')
