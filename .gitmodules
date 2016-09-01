@@ -37,3 +37,6 @@
 [submodule "vim-sensible"]
 	path = dotfiles/vim/bundle/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
+[submodule "delimitMate"]
+	path = dotfiles/vim/bundle/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git
