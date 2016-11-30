@@ -24,7 +24,7 @@ call plug#end()
 
 " set up colors
 set background=dark
-colorscheme base16-solarized-dark
+colorscheme base16-eighties
 
 " search options
 set ignorecase " make / searches case insensitive
@@ -113,7 +113,6 @@ set shortmess+=I
 " highlight the wrap column and column 100 (Brigade hard line length limit)
 if exists('+colorcolumn')
   set colorcolumn=+0,100
-  highlight ColorColumn ctermbg=black
 endif
 
 nnoremap <C-J> <C-W><C-J>
