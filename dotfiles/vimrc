@@ -5,7 +5,7 @@ set nocompatible
 let mapleader = ","
 
 " Load plugins
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'Raimondi/delimitMate'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'

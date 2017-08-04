@@ -5,11 +5,12 @@
 ```bash
 git clone git@github.com:noahsilas/dotfiles.git
 cd ./dotfiles
-git submodule update --init
 ./linkup
 
+vim -c PlugInstall
+
 # compile Command-T
-cd ~/.vim/bundle/Command-T/ruby/command-t
+cd ~/.vim/plugged/Command-T/ruby/command-t
 ruby extconf.rb
 make
 ```
