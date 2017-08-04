@@ -42,6 +42,9 @@
 [core]
   excludesfile = "~/.gitignore"
 
+[diff]
+  indentHeuristic = on
+
 [log]
   decorate = short
 
