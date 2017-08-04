@@ -139,5 +139,5 @@ set laststatus=2
 set noshowmode
 let g:airline_powerline_fonts = 1
 
-" skip bower managed node_modules directory when searching
-set wildignore+=node_modules/**
+" skip node_modules directory when searching
+set wildignore+=*/node_modules
