@@ -7,6 +7,7 @@ let mapleader = ","
 " Load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'Raimondi/delimitMate'
+Plug 'SirVer/ultisnips'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mxw/vim-jsx'
@@ -138,6 +139,8 @@ imap jj <Esc>
 set laststatus=2
 set noshowmode
 let g:airline_powerline_fonts = 1
+
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 
 " skip node_modules directory when searching
 set wildignore+=*/node_modules
