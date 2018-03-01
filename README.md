@@ -10,7 +10,7 @@ cd ./dotfiles
 vim -c PlugInstall
 
 # compile Command-T
-cd ~/.vim/plugged/Command-T/ruby/command-t
+cd ~/.vim/plugged/Command-T/ruby/command-t/ext/command-t
 ruby extconf.rb
 make
 ```
@@ -21,10 +21,3 @@ make
 - Install a Powerline patched font (and tell iTerm to use it):
   https://github.com/powerline/fonts
   I'm partial to Inconsolata-dz.
-
-## Adding a vim submodule
-```bash
-NAME=vim-airline
-CLONE_URL=https://github.com/bling/vim-airline.git
-git submodule add --name ${NAME} ${CLONE_URL} dotfiles/vim/bundle/${NAME}
-```
