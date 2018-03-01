@@ -65,6 +65,6 @@
   name = Noah Silas
   email = noahking@gmail.com
 
-# Only works in 1.7.10+
-[include]
-  path = ~/.gitconfig.local
+# Only works in 2.13+
+[includeIf "gitdir:~/Hustle/"]
+  path = ~/.gitconfig.hustle
