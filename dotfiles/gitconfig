@@ -17,6 +17,7 @@
   pear = pair
   reset-author = commit --amend --reset-author -C HEAD
   cont = rebase --continue
+  pushf = push --force-with-lease
 
   # http://technosorcery.net/blog/2012/08/05/updated-git-rebase-interactive-autosquash-commit-preparation/
   fixup = !sh -c 'git commit --fixup=$1' -
