@@ -68,7 +68,8 @@ nnoremap ' `
 nnoremap ` '
 
 " Remove trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+" (except when editing `diffs`, which sometimes require trailing whitespace)
+autocmd BufWritePre * if &ft != 'diff' | :%s/\s\+$//e
 
 " Use `s' to insert a Single character
 nnoremap s :exec "normal i".nr2char(getchar())."\e"<CR>
