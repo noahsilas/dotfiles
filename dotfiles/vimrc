@@ -93,14 +93,14 @@ au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 " convert hashrockets to ruby 1.9 syntax
 nmap <leader>rh :%s/\v(:)@<!:([a-zA-Z_][a-zA-Z_0-9]*)(\s*)\=\>\s?/\2:\3/gc<cr>
 
-" easy acking
-function! AckGrep(command)
-  cexpr system("ack --column " . a:command)
+" easy searching via the_silver_searcher
+function! Ag(command)
+  cexpr system("ag --column " . a:command)
   cw
 endfunction
 
-command! -nargs=+ -complete=file Ack call AckGrep(<q-args>)
-nnoremap <leader>a :Ack<space>
+command! -nargs=+ -complete=file Ag call Ag(<q-args>)
+nnoremap <leader>a :Ag<space>
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
