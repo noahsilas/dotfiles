@@ -10,7 +10,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mxw/vim-jsx'
-Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
@@ -20,6 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
 Plug 'wincent/Command-T'
 call plug#end()
 
@@ -122,16 +122,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_eslint_exe = $PWD .'/node_modules/.bin/eslint'
-let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
-
 " Pretty it up a little
-let g:neomake_error_sign = { 'text': '✗' }
-let g:neomake_warning_sign = { 'text': '⚠' }
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
 
 " add an easy way to leave insert mode
 imap jj <Esc>
@@ -140,6 +133,13 @@ imap jj <Esc>
 set laststatus=2
 set noshowmode
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
+" Default lightning emoji doesn't render nicely in iterm2
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.dirty = ' ⌁'
+
 
 " skip node_modules directory when searching
 set wildignore+=*/node_modules,*/coverage
