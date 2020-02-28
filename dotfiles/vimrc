@@ -144,16 +144,34 @@ let g:airline_symbols.dirty = ' ⌁'
 " skip node_modules directory when searching
 set wildignore+=*/node_modules,*/coverage
 
+" Enable JS Flow support
+let g:javascript_plugin_flow = 1
+
+
+""" Hustle specific tricks
 " Hustle keeps some compiled assets in a `dst` folder; ignore it when
 " searching
 set wildignore+=*/dst
-
-" Try to resolve '~/' as being relative to /src/js when invoking `gf`
-set includeexpr=substitute(v:fname,'\\~','./src/js','g')
 
 " HustleInc/backend adds "src" to the node path, so to use `gf` to find
 " some modules, I need it to also be in the vim path
 set path+=src
 
-" Enable JS Flow support
-let g:javascript_plugin_flow = 1
+" HustleInc/webapps uses some tricky aliases when resolving files; Add some
+" smarts so `gf` can follow them.
+function HustleTransform(target)
+  let helloWorld = '~/Hustle/hello-world/'
+  let replacements = {
+    \ '~admin': helloWorld . 'webapps/src/admin/js',
+    \ '~agent': helloWorld . 'webapps/src/agent/js',
+    \ '~component-library': helloWorld . 'webapps/src/component-library',
+    \ '~shared': helloWorld . 'webapps/src/shared',
+    \ }
+  let values = split(a:target, '\/')
+  let initial = values[0]
+  let rest = join(values[1:], '/')
+  let replacement = get(replacements, initial, initial)
+  return replacement . '/' . rest
+endfunction
+
+set includeexpr=HustleTransform(v:fname)
