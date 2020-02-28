@@ -147,6 +147,9 @@ set wildignore+=*/node_modules,*/coverage
 " Enable JS Flow support
 let g:javascript_plugin_flow = 1
 
+" faster file scanning in git repos
+let g:CommandTFileScanner = 'git'
+
 
 """ Hustle specific tricks
 " Hustle keeps some compiled assets in a `dst` folder; ignore it when
