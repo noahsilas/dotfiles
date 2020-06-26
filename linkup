@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 #
 # Links the contents of the `dotfiles` directory into the home directory,
 # prefixing each with a `.`.
