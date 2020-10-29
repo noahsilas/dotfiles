@@ -177,3 +177,8 @@ function HustleTransform(target)
 endfunction
 
 set includeexpr=HustleTransform(v:fname)
+
+" shortcut to put the contents of a buffer into my clipboard (to make it
+" easier to type something out in vim and then paste it into something like a
+" web form)
+noremap <leader>y :%w !pbcopy -<cr><cr>
