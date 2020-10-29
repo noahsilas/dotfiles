@@ -167,6 +167,7 @@ function HustleTransform(target)
     \ '~agent': helloWorld . 'webapps/src/agent/js',
     \ '~component-library': helloWorld . 'webapps/src/component-library',
     \ '~shared': helloWorld . 'webapps/src/shared',
+    \ '~/': helloWorld . 'command-center/src/js/'
     \ }
   let values = split(a:target, '\/')
   let initial = values[0]
