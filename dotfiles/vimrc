@@ -19,6 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 Plug 'wincent/Command-T'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript'] }
 call plug#end()
 
 " set up colors
@@ -152,5 +153,11 @@ let g:CommandTFileScanner = 'git'
 " easier to type something out in vim and then paste it into something like a
 " web form)
 noremap <leader>y :%w !pbcopy -<cr><cr>
+
+" Prettier config
+let g:prettier#autoformat_config_present = 1 " Only autoformat with prettier if a config is present
+let g:prettier#autoformat_require_pragma = 0 " Allow autoformatting files without @prettier tag
+let g:prettier#config#config_precedence = 'prefer-file' " use config file settings
+let g:prettier#quickfix_auto_focus = 0 " Don't autofocus on quickfix when errors occur
 
 runtime hustle.vim
