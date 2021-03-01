@@ -3,7 +3,7 @@ hs.window.animationDuration = 0
 
 -- move window to the screen the mouse is on,
 -- sizing to take up the left half
-hs.hotkey.bind({"cmd", "alt"}, "Left", function()
+function windowLeft ()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = hs.mouse.getCurrentScreen()
@@ -15,11 +15,14 @@ hs.hotkey.bind({"cmd", "alt"}, "Left", function()
   f.h = max.h
   win:moveToScreen(screen)
   win:setFrame(f)
-end)
+end
+
+hs.hotkey.bind({"cmd", "alt"}, "Left", windowLeft)
+hs.hotkey.bind({"cmd", "alt"}, "H", windowLeft)
 
 -- move window to the screen the mouse is on,
 -- sizing to take up the right half
-hs.hotkey.bind({"cmd", "alt"}, "Right", function()
+function windowRight ()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = hs.mouse.getCurrentScreen()
@@ -31,7 +34,10 @@ hs.hotkey.bind({"cmd", "alt"}, "Right", function()
   f.h = max.h
   win:moveToScreen(screen)
   win:setFrame(f)
-end)
+end
+
+hs.hotkey.bind({"cmd", "alt"}, "Right", windowRight)
+hs.hotkey.bind({"cmd", "alt"}, "L", windowRight)
 
 -- move window to the screen the mouse is on,
 -- sizing to take up the right half
@@ -52,7 +58,7 @@ end)
 -- 'Lock' by starting the screensaver (which I have configured to require
 -- my password to dismiss). This is prettier than the lock screen, and doesn't
 -- do the silly cube-transform to the login screen.
-hs.hotkey.bind({"cmd", "alt"}, "L", function()
+hs.hotkey.bind({"cmd", "alt", "shift"}, "L", function()
   hs.caffeinate.startScreensaver()
 end)
 
