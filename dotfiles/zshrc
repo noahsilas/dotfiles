@@ -91,6 +91,9 @@ for addin in $HOME/.zshrc.d/*; do
   source $addin
 done
 
+[[ -s /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+[[ -s /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
+
 # add platform specific overrides
 PLATFORM_RC=~/.zshrc.$(uname)
 [[ -s $PLATFORM_RC ]] && source $PLATFORM_RC
