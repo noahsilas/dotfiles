@@ -21,6 +21,7 @@ Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript'] }
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
 call plug#end()
 
 " set up colors
@@ -146,6 +147,9 @@ noremap <leader>b :Buffers<cr>
 " easier to type something out in vim and then paste it into something like a
 " web form)
 noremap <leader>y :%w !pbcopy -<cr><cr>
+
+" Trigger ALE hover info manually (since I am not using the mouse hover)
+noremap <leader>h :ALEHover<cr>
 
 " Prettier config
 let g:prettier#autoformat_config_present = 1 " Only autoformat with prettier if a config is present
