@@ -75,7 +75,6 @@ ssh-reagent () {
 
 # set up colors
 autoload colors; colors;
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # set up prompt
 setopt prompt_subst
