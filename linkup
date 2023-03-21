@@ -4,8 +4,9 @@
 # prefixing each with a `.`.
 
 RELATIVE_PATH=`dirname $0`
+BASE_PATH=`( cd ${RELATIVE_PATH} && pwd)`
 BACKUP_PATH=$RELATIVE_PATH/backup/`date +%Y%m%d%k%M%S`
-DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
+DOTFILES_PATH=${BASE_PATH}/dotfiles
 
 for FILE in $DOTFILES_PATH/*; do
     NAME=`basename $FILE`
@@ -23,3 +24,13 @@ for FILE in $DOTFILES_PATH/*; do
 
     ln -s $FILE $DEST
 done
+
+# Karabiner doesn't let us customizez where it's config lives, it must be at
+# ~/.config/karabiner/karabiner.json, and that file is not allowed to be a
+# symlink itself. I don't want to track the entire `~/.config` directory
+# (because some other things like iTerm also stuff cruft in there), so here's a
+# custom link only for macos (Darwin).
+if [[ $(uname) == "Darwin" ]]; then
+  mkdir -p ~/.config
+  ln -s $BASE_PATH/karabiner ~/.config
+fi
