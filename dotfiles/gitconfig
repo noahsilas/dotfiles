@@ -1,5 +1,5 @@
 [alias]
-  r = reset --hard origin/master
+  r = reset --hard @{u}
   st = status
   ci = commit
   br = branch
