@@ -116,6 +116,8 @@ nnoremap <C-H> <C-W><C-H>
 " Pretty it up a little
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
+let g:ale_echo_msg_format = '[%linter% %code%] %s'
+
 
 " add an easy way to leave insert mode
 imap jj <Esc>
@@ -149,6 +151,12 @@ noremap <leader>y :%w !pbcopy -<cr><cr>
 
 " Trigger ALE hover info manually (since I am not using the mouse hover)
 noremap <leader>h :ALEHover<cr>
+noremap <leader>g :ALEGoToDefinition<cr>
+noremap <leader>r :ALEFindReferences<cr>
+
+" Make it easy to jump to the next item in the location list (which is
+" often populated by ALE)
+noremap <leader>n :lnext<cr>
 
 " Prettier config
 let g:prettier#autoformat_config_present = 1 " Only autoformat with prettier if a config is present
