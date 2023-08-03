@@ -20,7 +20,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript'] }
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 call plug#end()
 
