@@ -17,6 +17,7 @@
   amend = commit --amend
   pear = pair
   reset-author = commit --amend --reset-author -C HEAD
+  trailers = show --no-patch --pretty="%(trailers)"
   cont = rebase --continue
   pushf = push --force-with-lease
 
