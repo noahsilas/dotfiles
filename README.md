@@ -3,16 +3,7 @@
 ## Installing
 
 ```bash
-git clone git@github.com:noahsilas/dotfiles.git
-cd ./dotfiles
-./linkup
-
-vim -c PlugInstall
-
-# compile Command-T
-cd ~/.vim/plugged/Command-T/ruby/command-t/ext/command-t
-ruby extconf.rb
-make
+curl -fsS https://raw.githubusercontent.com/noahsilas/dotfiles/master/install.sh | sh
 ```
 
 ### MacOS
