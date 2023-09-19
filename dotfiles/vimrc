@@ -25,7 +25,7 @@ call plug#end()
 
 " set up colors
 set background=dark
-colorscheme base16-eighties
+silent! colorscheme base16-eighties
 
 " search options
 set ignorecase " make / searches case insensitive
