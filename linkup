@@ -25,7 +25,7 @@ for FILE in $DOTFILES_PATH/*; do
     ln -s $FILE $DEST
 done
 
-# Karabiner doesn't let us customizez where it's config lives, it must be at
+# Karabiner doesn't let us customize where it's config lives, it must be at
 # ~/.config/karabiner/karabiner.json, and that file is not allowed to be a
 # symlink itself. I don't want to track the entire `~/.config` directory
 # (because some other things like iTerm also stuff cruft in there), so here's a
