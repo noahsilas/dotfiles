@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# A small helper to quickly commit a thought or experiment without
+# needing to conform to things like precommit hooks. Makes it easy to
+# jam a small commit into place that I will rewrite later.
+#
+# Sample usage:
+#   git wip Trying out a weird test strategy
+MESS="WIP: ${@:1}"
+git commit --no-verify --message "${MESS}"

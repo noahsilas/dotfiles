@@ -25,6 +25,24 @@ for FILE in $DOTFILES_PATH/*; do
     ln -s $FILE $DEST
 done
 
+mkdir -p ~/bin
+for FILE in ${BASE_PATH}/bin/*; do
+    NAME=`basename $FILE`
+    DEST=~/bin/$NAME
+
+    if [[ -L $DEST ]] && [[ `readlink $DEST` == $FILE ]]; then
+        # The link is already to the destination; we don't need to do
+        # anything.
+        continue
+    elif [[ -e $DEST ]] then
+      mkdir -p $BACKUP_PATH/bin
+      echo "Backing up $DEST"
+      mv $DEST $BACKUP_PATH/bin/$NAME
+    fi
+
+    ln -s $FILE $DEST
+done
+
 # Karabiner doesn't let us customize where it's config lives, it must be at
 # ~/.config/karabiner/karabiner.json, and that file is not allowed to be a
 # symlink itself. I don't want to track the entire `~/.config` directory
