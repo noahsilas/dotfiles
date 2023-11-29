@@ -26,6 +26,7 @@ bindkey "^[3;5~" delete-char
 bindkey "\e[3~" delete-char
 
 # Completion
+fpath+=(~/.zshrc.d/fpath)
 autoload -U compinit
 zmodload -i zsh/complist
 compinit
