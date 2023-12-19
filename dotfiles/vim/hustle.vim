@@ -7,17 +7,21 @@ set wildignore+=*/dst
 " some modules, I need it to also be in the vim path
 set path+=src
 
+" via https://vi.stackexchange.com/questions/29062/how-to-check-if-a-string-starts-with-another-string-in-vimscript
+fu StartsWith(longer, shorter) abort
+  return a:longer[0:len(a:shorter)-1] ==# a:shorter
+endfunction
+
 " HustleInc/webapps uses some tricky aliases when resolving files; Add some
 " smarts so `gf` can follow them.
 function HustleTransform(target)
   let helloWorld = '~/Hustle/hello-world/'
 
-  " Backend uses '~' alone as the prefix. If this buffer is a backend buffer,
-  " directly replace a leading tilde with the backend src path.
-  let filePath = expand('%:p')
-  let inBackend = stridx(filePath, 'backend') != -1
-  if inBackend && a:target[0] == '~'
-    return helloWorld . 'backend/src/' . a:target[1:]
+  " Actual path prefix is `@hustle/backend`, but the @ isn't in the `isfname`
+  " option. Maybe I should add that? :thinking:
+  if StartsWith(a:target, 'hustle/backend')
+    let path = a:target[len('hustle/backend'):]
+    return helloWorld . 'backend/src/' . path
   endif
 
   let replacements = {
